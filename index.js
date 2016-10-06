@@ -51,11 +51,11 @@ app.post("/send-message",function(req,res){
 });
 
 app.post("/dare",function(req,res){
-	console.log("posted")
-	console.log(req.body);
-	user.text = "message received"
+	var handler = require('./helpers/dare');
+	var response = handler.handleMessage(req.body);
+	// user.text = "message received"
 
-	res.send(JSON.stringify(user));
+	res.send(JSON.stringify(response));
 })
 
 app.listen(9000);
