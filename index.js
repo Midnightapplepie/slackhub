@@ -55,7 +55,7 @@ app.post("/dare",function(req,res){
 	var response = handler.handleMessage(req.body);
 	// user.text = "message received"
 
-	res.send(JSON.stringify(response));
+	res.send(response);
 })
 
 app.listen(9000);
