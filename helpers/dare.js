@@ -32,6 +32,8 @@ function dareMessage(incomming){
 			}
 		]
 	}
+
+	return message;
 }
 
 function handleMessage(incomming){
