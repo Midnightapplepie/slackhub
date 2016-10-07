@@ -53,7 +53,7 @@ app.post("/send-message",function(req,res){
 app.post("/dare",function(req,res){
 	var handler = require('./helpers/dare');
 	var response = handler.handleMessage(req.body);
-	// user.text = "message received"
+	console.log(req.body);
 
 	res.send(response);
 })

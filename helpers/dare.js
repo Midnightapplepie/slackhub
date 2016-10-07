@@ -8,8 +8,7 @@ function handleMessage(incomming){
 	}
 	var outgoing = {
 		channel: "#" + incomming.channel_name,
-		channel_id: incomming.channel_id,
-		text
+		channel_id: incomming.channel_id
 	}
 
 	request.post({
