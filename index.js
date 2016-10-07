@@ -7,8 +7,8 @@ var path = require("path");
 var request = require("request");
 // var fs = require('fs');
 
-// var privateKey = fs.readFileSync(path.resolve(__dirname + "/key.pem"),"utf8");
-// var certificate = fs.readFileSync(path.resolve(__dirname + "/cert.pem"),"utf8");
+// var privateKey = fs.readFileSync(path.resolve(__dirname + "/credentials/key.pem"),"utf8");
+// var certificate = fs.readFileSync(path.resolve(__dirname + "/credentials/cert.pem"),"utf8");
 
 
 // var httpsServer = https.createServer({key: privateKey, cert: certificate},app);
