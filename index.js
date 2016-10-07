@@ -50,6 +50,12 @@ app.post("/send-message",function(req,res){
 	res.redirect("/");
 });
 
+app.get("/oauth",function(req,res){
+	var code = res.query;
+
+	res.send(code);
+})
+
 app.post("/dare",function(req,res){
 	var handler = require('./helpers/dare');
 	var response = handler.handleMessage(req.body);
