@@ -51,8 +51,8 @@ app.post("/send-message",function(req,res){
 });
 
 app.get("/oauth",function(req,res){
-	var code = res.query;
-
+	var code = res.params;
+	console.log(code);
 	res.send(code);
 })
 
