@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 var app = express();
 var path = require("path");
 var request = require("request");
+var oauth = require("./helpers/oauth");
 // var fs = require('fs');
 
 // var privateKey = fs.readFileSync(path.resolve(__dirname + "/credentials/key.pem"),"utf8");
@@ -51,8 +52,9 @@ app.post("/send-message",function(req,res){
 });
 
 app.get("/oauth",function(req,res){
-	var code = req.query;
-	console.log(code);
+	var code = req.query.code;
+	console.log(oauth);
+	oauth.buildTokenUrl(code);
 	res.send(code);
 })
 
