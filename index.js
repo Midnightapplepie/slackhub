@@ -53,8 +53,8 @@ app.post("/send-message",function(req,res){
 
 app.get("/oauth",function(req,res){
 	var code = req.query.code;
-	console.log(oauth);
-	oauth.buildTokenUrl(code);
+	var url = oauth.buildTokenUrl(code);
+	oauth.getToken(url);
 	res.send(code);
 })
 

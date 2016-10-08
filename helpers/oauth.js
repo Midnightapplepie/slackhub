@@ -2,13 +2,17 @@ var credentials = require("../credentials/app_credentials");
 var request = require("request");
 
 var client = credentials;
-client.redirectUri = "http://www.slackershub.club/token";
+client.redirectUri = "http://www.slackershub.club/oauth";
 
 var oauth = {
 	client: client,
 	getToken: function(url){
 		request.get(url,function(req,res){
+			var data = res.body
+			var pdata = JSON.parse(res.body);
 
+			console.log(data);
+			console.log(pdata);
 		})
 	},
 	buildTokenUrl:function(code){
@@ -16,7 +20,7 @@ var oauth = {
 		var url = "https://slack.com/api/oauth.access" + 
 					"?client_id=" + this.client.client_id +
 					"&client_secret=" + this.client.client_secret+
-					"&cod=" + code + 
+					"&code=" + code + 
 					"&redirect_uri=" + this.client.redirectUri 
 
 		console.log(url);
