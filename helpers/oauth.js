@@ -10,11 +10,8 @@ var oauth = {
 		var url = this.buildTokenUrl(code);
 
 		request.get(url,function(req,res){
-			var data = res.body;
-			var pdata = JSON.parse(res.body);
+			var authorization = JSON.parse(res.body);
 
-			console.log(data);
-			console.log(pdata);
 		})
 	},
 	buildTokenUrl:function(code){
