@@ -6,9 +6,11 @@ client.redirectUri = "http://www.slackershub.club/oauth";
 
 var oauth = {
 	client: client,
-	getToken: function(url){
+	getToken: function(code){
+		var url = this.buildTokenUrl(code);
+
 		request.get(url,function(req,res){
-			var data = res.body
+			var data = res.body;
 			var pdata = JSON.parse(res.body);
 
 			console.log(data);
@@ -23,7 +25,7 @@ var oauth = {
 					"&code=" + code + 
 					"&redirect_uri=" + this.client.redirectUri 
 
-		console.log(url);
+		return url;
 	}
 }
 
