@@ -12,6 +12,7 @@ var oauth = {
 		})
 	},
 	buildTokenUrl:function(code){
+		console.log("generating url");
 		var url = "https://slack.com/api/oauth.access" + 
 					"?client_id=" + this.client.client_id +
 					"&client_secret=" + this.client.client_secret+
@@ -22,4 +23,4 @@ var oauth = {
 	}
 }
 
-module.exports = oauth
+module.exports = oauth;
