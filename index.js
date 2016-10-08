@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 var slackChannel = "https://hooks.slack.com/services/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";
 
 var user = {
-		username: "The-Others",
+		username: "The-Bracket",
 		icon_emoji: ":robot_face:",
 	}
 
